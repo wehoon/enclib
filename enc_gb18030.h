@@ -22,7 +22,7 @@ class GB18030 {
 
  private:
   static bool isFirstByte(byte_t b) { return 0x81 <= b && b <= 0xFE; }
-  static bool isDoubleSecondByte(byte_t b) { return 0x40 <= b && b <= 0xFE; }
+  static bool isDoubleSecondByte(byte_t b) { return 0x40 <= b && b <= 0xFE && b != 0x7F; }
   static bool isFourSecondByte(byte_t b) { return 0x30 <= b && b <= 0x39; }
 };
 
