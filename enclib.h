@@ -3,6 +3,7 @@
 #include <cstring>
 #include <string>
 #include <vector>
+#include "enc_gbk.h"
 #include "enc_gb18030.h"
 #include "enc_utf8.h"
 
