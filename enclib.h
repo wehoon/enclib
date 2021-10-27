@@ -120,8 +120,12 @@ class Enc {
         ++s;
         next_byte = EncCore::GetNextWordByteLen(s, end - s);
       }
-      res.insert(res.size(), s, next_byte);
-      s += next_byte;
+      if (next_byte > 0) {
+        res.insert(res.size(), s, next_byte);
+        s += next_byte;
+      } else {
+        ++s;
+      }
     }
     return res;
   }
@@ -138,8 +142,12 @@ class Enc {
         continue;
       }
       int next_byte = EncCore::GetNextWordByteLen(s, end - s);
-      res.insert(res.size(), s, next_byte);
-      s += next_byte;
+      if (next_byte > 0) {
+        res.insert(res.size(), s, next_byte);
+        s += next_byte;
+      } else {
+        ++s;
+      }
     }
     return res;
   }
